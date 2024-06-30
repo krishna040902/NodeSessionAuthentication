@@ -1,0 +1,10 @@
+extends navbar
+
+block title
+  | Home
+
+block content
+    if !user
+        p.text-center.fs-3 You are not logged in.
+    else
+        p.text-center.fs-3 You are logged in.

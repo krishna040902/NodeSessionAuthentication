@@ -1,0 +1,20 @@
+extends navbar
+
+block title
+  | Register
+
+block content
+        .container
+            .row.justify-content-center
+                .col-md-6
+                    form(action="/register", method="post") 
+                        .form-floating.mb-3
+                            input#name.form-control(type='text', placeholder='Name', name='name' required)
+                            label(for='name') Name
+                        .form-floating.mb-3
+                            input#email.form-control(type='email', placeholder='name@example.com', name='email' required)
+                            label(for='email') Email address
+                        .form-floating.mb-3
+                            input#password.form-control(type='password', placeholder='Password', name='password' required)
+                            label(for='password') Password
+                        button.btn.btn-primary(type='submit') Submit

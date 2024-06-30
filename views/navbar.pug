@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title
+            block title
+        link(rel='stylesheet', href='static/stylesheets/bootstrap.min.css')
+        style.
+            .form-floating {
+                margin-bottom: 1rem;
+            }
+            .logout-link {
+                color: red !important;
+                border: 1px solid red;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+            .logout-link:hover {
+                background-color: #ffcccc;
+            }
+    body 
+        nav.navbar.navbar-expand-lg.bg-body-tertiary.bg-dark.border-bottom.border-body(data-bs-theme="dark")
+            .container-fluid
+                #navbarNav.collapse.navbar-collapse
+                    ul.navbar-nav
+                        li.nav-item
+                            a.nav-link.active(aria-current='page', href='/') Home
+                        li.nav-item
+                            a.nav-link(href='/register') Register
+                        if !user
+                            li.nav-item
+                                a.nav-link(href='/login') Login
+                        li.nav-item
+                            a.nav-link(href='/dashboard') Dashboard
+                    if user
+                        ul.navbar-nav.ms-auto
+                            li.nav-item
+                                a.nav-link.logout-link(href='/logout') Logout
+        script(src='static/javascripts/bootstrap.bundle.min.js')
+        block content
